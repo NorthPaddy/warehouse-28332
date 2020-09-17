@@ -10,15 +10,23 @@
   </div>
 
   <div class="user-contents">
+  <% if user_signed_in? %>
+      <%= link_to current_user.name, "#", class: "user-name" %>
+      <h2 class="service-explain">ログアウトは
+      <%= link_to "こちら", destroy_user_session_path, method: :delete, class: "logout" %>
+      </h2>
+  <% else %>
     <h2 class="service-explain">登録されていない方は
-      <a><%= link_to "こちら", "#", class: "signup-link" %></a>
+      <a><%= link_to "こちら", new_user_registration_path, class: "signup-link" %></a>
     </h2>
     <h2 class="service-explain">ログインは
-      <a><%= link_to "こちら", "#", class: "signin-link" %></a>
+      <a><%= link_to "こちら", new_user_session_path, class: "signin-link" %></a>
     </h2>
+  <% end %>
   </div>
 
 <%#以下はログイン状態じゃないと表示されない%>
+<% if user_signed_in? %>
   <div class="item-contents">
     <h2 class='service-explain'>商品の登録は
       <a><%= link_to "こちら", "#", class: "item-link" %></a>
@@ -30,5 +38,5 @@
       <a><%= link_to "こちら", "#", class: "warehouse-link" %></a>
     </h2>
   </div>
-
+<% end %>
 </div>
