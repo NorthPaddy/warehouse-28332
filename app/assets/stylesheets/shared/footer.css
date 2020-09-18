@@ -1,0 +1,12 @@
+.footer-contents {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  text-align: center;
+
+}
+.footer-home-icon {
+  height: 20px;
+  width: 20px;
+}

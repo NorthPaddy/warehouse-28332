@@ -1,13 +1,4 @@
-<div class="main">
-
-  <div class="title-contents">  
-    <h1 class="service-title">
-      Warehouse
-    </h1>
-    <h3 class="service-sub-title">
-      倉庫内の商品の登録、検索が行えます
-    </h3>
-  </div>
+<%= render "shared/header" %>
 
   <%= form_with model:@user, url:user_registration_path, class: "user_registration", local: true do |f| %>
   <div class="form-group">
@@ -50,4 +41,4 @@
   </div>
 <% end %>
 
-</div>
+<%= render "shared/footer" %>
