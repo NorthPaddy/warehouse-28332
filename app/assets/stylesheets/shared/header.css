@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.header-contents {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  text-align: center;
+
+}
+
+.title-contents {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.service-title {
+  font-size: 5vh;
+  justify-content: flex-start;
+}
+
+.home-icon {
+  width: 5vw;
+
+}
+
+.service-sub-title {
+  font-size: 2vh;
+
+}

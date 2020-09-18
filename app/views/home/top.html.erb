@@ -1,13 +1,5 @@
-<div class="main">
-
-  <div class="title-contents">
-    <h1 class="service-title">
-      Warehouse
-    </h1>
-    <h3 class="service-sub-title">
-      倉庫内の商品の登録、検索が行えます
-    </h3>
-  </div>
+<%= render "shared/header" %>
+<div class="main-menu">
 
   <div class="user-contents">
   <% if user_signed_in? %>
@@ -25,8 +17,8 @@
   <% end %>
   </div>
 
-<%#以下はログイン状態じゃないと表示されない%>
-<% if user_signed_in? %>
+  <%#以下はログイン状態じゃないと表示されない%>
+  <% if user_signed_in? %>
   <div class="item-contents">
     <h2 class='service-explain'>商品の登録は
       <a><%= link_to "こちら", "#", class: "item-link" %></a>
@@ -38,5 +30,12 @@
       <a><%= link_to "こちら", "#", class: "warehouse-link" %></a>
     </h2>
   </div>
-<% end %>
+
+  <div class="warehouse-contents">
+    <h2 class="service-explain">検索履歴は
+      <a><%= link_to "こちら", "#", class: "warehouse-link" %></a>
+    </h2>
+  </div>
+  <% end %>
 </div>
+<%= render "shared/footer" %>
