@@ -7,6 +7,7 @@
 登録された商品を選ぶことで、その商品が倉庫のどこにあるか検索して場所を特定するアプリケーションになります。
 ここでの商品とはプラスチック段ボールのプレートになります。
 イメージしにくいと思うので以下の画像をご覧いただきイメージを掴んでみてください
+
 ![image](https://user-images.githubusercontent.com/66520239/93739187-a412bb00-fc22-11ea-8547-ab75c278a584.png)
 ![image](https://user-images.githubusercontent.com/66520239/93739244-d0c6d280-fc22-11ea-9398-0956b01e2fe1.png)
 
