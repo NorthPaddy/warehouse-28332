@@ -58,13 +58,14 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 
 | Column            | Type       | Options                       |
 | --------------    | ---------- | ----------------------------- |
-| mold              | string     | null:false                    |
-| thickness         | string     | null:false                    |
-| hardness          | string     | null:false                    |
+| mold_id           | integer    | null:false                    |
+| thickness_id      | integer    | null:false                    |
+| hardness_id       | integer    | null:false                    |
 | plate_color_id    | integer    | null:false                    |
 | plate_width_id    | integer    | null:false                    |
 | plate_length_id   | integer    | null:false                    |
-| prefecture_id     | integer    | null:false                    |
+| Number_of_sheets  | integer    | null:false                    |
+| user              | references | null:false, foreign_key: true |
 
 ### Association
 
@@ -75,6 +76,7 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 
 | Column            | Type       | Options                       |
 | --------------    | ---------- | ----------------------------- |
+| warehouse_number  | string     | null:false                    |
 | warehouse_colum   | string     | null:false                    |
 | address           | string     | null:false                    |
 | number_of_stage   | string     | null:false                    |
