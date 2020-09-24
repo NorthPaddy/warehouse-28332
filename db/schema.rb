@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_064618) do
+ActiveRecord::Schema.define(version: 2020_09_24_142929) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "warehouse_number", null: false
+    t.string "warehouse_colum", null: false
+    t.integer "house_number", null: false
+    t.integer "number_of_stage", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "plates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "mold_id", null: false
@@ -41,16 +50,15 @@ ActiveRecord::Schema.define(version: 2020_09_24_064618) do
   end
 
   create_table "warehouses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "warehouse_colum", null: false
-    t.string "address", null: false
-    t.string "number_of_stage", null: false
     t.bigint "plate_id", null: false
+    t.bigint "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_id"], name: "index_warehouses_on_address_id"
     t.index ["plate_id"], name: "index_warehouses_on_plate_id"
   end
 
   add_foreign_key "plates", "users"
+  add_foreign_key "warehouses", "addresses"
   add_foreign_key "warehouses", "plates"
 end

@@ -1,9 +1,9 @@
-# アプリケーション名
+## アプリケーション名
 「warehouse」
 ![image](https://user-images.githubusercontent.com/66520239/93739357-0c619c80-fc23-11ea-85d8-5fe868eefb9c.png)
 
 
-# 概要
+## 概要
 登録された商品を選ぶことで、その商品が倉庫のどこにあるか検索して場所を特定するアプリケーションになります。
 ここでの商品とはプラスチック段ボールのプレートになります。
 イメージしにくいと思うので以下の画像をご覧いただきイメージを掴んでみてください
@@ -13,18 +13,18 @@
 
 
 
-# URL
+## URL
 HEROKU上にデプロイした後にAWSにデプロイする予定です
 
 
 
-# テスト用アカウント
+## テスト用アカウント
 テスト用アカウントに簡単ログイン機能を実装してあります。
 
 トップページ「簡単ログイン」のリンクからログインしてください。
 
 
-# 利用方法
+## 利用方法
 まずはユーザー登録（社員番号、氏名）を入力し、ログインをします。
 登録しないと倉庫の参照はできません。
 
@@ -34,14 +34,14 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 検索者は探したい商品の情報「型」「厚み」「硬さ」「色」「幅」「長さ」「枚数」の情報を選び、倉庫のどこにあるか特定します。
 
 
-# 目指した課題解決
+## 目指した課題解決
 登録者は何処に商品が保存されているかある程度把握していますが
 検索者は把握していません。
 検索者は登録者が登録した情報を商品の情報を元に探し出し商品の場所を特定することができるようにキーワードを用いて検索することができます
 
-# テーブル設計
+## テーブル設計
 
-## usersテーブル
+### usersテーブル
 
 | Column           | Type   | Options    |
 | ---------        | ------ | ---------- |
@@ -49,12 +49,12 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 | employee_number  | string | null:false |
 | password         | string | null:false |
 
-### Association
+#### Association
 
 - has_many :plates
 
 
-## platesテーブル
+### platesテーブル
 
 | Column            | Type       | Options                       |
 | --------------    | ---------- | ----------------------------- |
@@ -67,21 +67,34 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 | Number_of_sheets  | integer    | null:false                    |
 | user              | references | null:false, foreign_key: true |
 
-### Association
+#### Association
 
 - belongs_to :user
-- belongs_to :warehouse
+- has_many :warehouses
+- has_many :addresses, through: warehouses
 
-## warehousesテーブル
+### warehouseテーブル
+| Column     | Type       | Options                      |
+| ---------- | ---------- | ---------------------------- |
+| plate      | references | null:false foreign_key: true |
+| address    | references | null:false foreign_key: true |
+
+#### Association
+
+- belong_to :plate
+- belong_to :address
+
+
+### addressテーブル
 
 | Column            | Type       | Options                       |
 | --------------    | ---------- | ----------------------------- |
 | warehouse_number  | string     | null:false                    |
 | warehouse_colum   | string     | null:false                    |
-| address           | string     | null:false                    |
-| number_of_stage   | string     | null:false                    |
-| plate_id          | references | null:false, foreign_key: true |
+| house_number      | integer    | null:false                    |
+| number_of_stage   | integer    | null:false                    |
 
-### Association
+#### Association
 
-- has_many :plates
+- has_many :warehouses
+- has_many :plates, through: warehouses

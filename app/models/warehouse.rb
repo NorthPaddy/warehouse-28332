@@ -1,8 +1,4 @@
 class Warehouse < ApplicationRecord
-  
-  has_many :plates
-
-  with_options presence: true do
-    validates :name, :warehouse_colum, :address, :number_of_stage
-  end
+  belong_to :plate
+  belong_to :address
 end

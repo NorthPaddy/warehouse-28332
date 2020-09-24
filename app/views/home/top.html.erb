@@ -20,7 +20,7 @@
   <%#以下はログイン状態じゃないと表示されない%>
   <% if user_signed_in? %>
   <div class="item-contents">
-    <h2 class='service-explain'>商品の登録/倉庫内への登録は
+    <h2 class='service-explain'>商品の登録は
       <a><%= link_to "こちら", new_plate_path, class: "item-link" %></a>
     </h2>
   </div>
