@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,:recoverable, :rememberable, :validatable,
   :authentication_keys => [:name, :employee_number]
   
+  has_many :plates
+  has_many :address
+
   with_options presence: true do
     validates :name
     validates :employee_number

@@ -1,4 +1,6 @@
 class Address < ApplicationRecord
+
+  belongs_to :user
   belong_to :plate
   has_many :plates, through: warehouses
 
