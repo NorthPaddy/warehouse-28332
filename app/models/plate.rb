@@ -8,6 +8,7 @@ class Plate < ApplicationRecord
   belongs_to_active_hash :plate_length
 
   belongs_to :user
+  has_many :warehouses, dependent: :destroy
 
   with_options presence: true do
     validates :mold_id, :thickness_id, :hardness_id,
