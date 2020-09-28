@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  def index
-    @plate = Plare.all
-    @address = Address.all
+  def top
+    @users = User.all
+    @warehouse = Warehouse.all.includes(:plates)
   end
 end

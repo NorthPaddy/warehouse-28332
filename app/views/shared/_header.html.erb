@@ -8,5 +8,14 @@
     <h3 class="service-sub-title">
       倉庫内の商品の登録、検索が行えます
     </h3>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+      <li><%= current_user.name %></li>
+      <li> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "signin-link" %></li>
+      <li><%= link_to '登録', new_user_registration_path, class: "signup-link" %></li>
+      <% end %>
+    </ul>
   </div>
 </div>

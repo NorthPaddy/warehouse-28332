@@ -8,8 +8,7 @@ class Plate < ApplicationRecord
   belongs_to_active_hash :plate_length
 
   belongs_to :user
-  belongs_to :warehouse
-  has_many :addresses, through: warehouses
+  has_many :warehouses
 
   with_options presence: true do
     validates :mold_id, :thickness_id, :hardness_id,

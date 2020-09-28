@@ -1,5 +1,8 @@
 class PlatesController < ApplicationController
 
+  def index
+    @plate = Plate.all.order(id: 'DESC')
+  end
 
   def new
     @plate = Plate.new
@@ -8,7 +11,7 @@ class PlatesController < ApplicationController
   def create
     @plate = Plate.new(plate_params)
     if @plate.save
-      redirect_to root_path(@plate.user_id)
+      redirect_to plates_path
     else
       render :new
     end

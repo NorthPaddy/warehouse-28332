@@ -5,7 +5,7 @@ class User < ApplicationRecord
   :authentication_keys => [:name, :employee_number]
   
   has_many :plates
-  has_many :address
+  has_many :warehouses
 
   with_options presence: true do
     validates :name

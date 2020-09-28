@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "home#top"
-  resources :plates, only: [:new, :create]
-  resources :addresses, only: [:new, :create]
-
+  resources :plates, only: [:index, :new, :create, :edit, :destroy] do
+    resources :warehouses, only: [:new, :create]
+  end
 end

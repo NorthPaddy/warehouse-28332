@@ -52,6 +52,7 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 #### Association
 
 - has_many :plates
+- has_many :warehouses
 
 
 ### platesテーブル
@@ -70,22 +71,10 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 #### Association
 
 - belongs_to :user
-- has_many :warehouses
-- has_many :addresses, through: warehouses
+- has_many :warehouse
+
 
 ### warehouseテーブル
-| Column     | Type       | Options                      |
-| ---------- | ---------- | ---------------------------- |
-| plate      | references | null:false foreign_key: true |
-| address    | references | null:false foreign_key: true |
-
-#### Association
-
-- belong_to :plate
-- belong_to :address
-
-
-### addressテーブル
 
 | Column            | Type       | Options                       |
 | --------------    | ---------- | ----------------------------- |
@@ -93,8 +82,10 @@ HEROKU上にデプロイした後にAWSにデプロイする予定です
 | warehouse_colum   | string     | null:false                    |
 | house_number      | integer    | null:false                    |
 | number_of_stage   | integer    | null:false                    |
+| user              | references | null:false, foreign_key: true |
+| plate             | references | null:false, foreign_key: true |
 
 #### Association
 
-- has_many :warehouses
-- has_many :plates, through: warehouses
+- belongs_to :user
+- belongs_to :plate
