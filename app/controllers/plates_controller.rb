@@ -18,10 +18,18 @@ class PlatesController < ApplicationController
   end
 
   def edit
-
+    @plate = Plate.find(params[:id])
   end
 
   def update
+    @plate = Plate.find(params[:id])
+    if @plate.update(plate_params)
+      flash[:notice] = "編集が完了しました"
+      redirect_to action: :index
+    else
+      flash[:alert] = "編集が失敗しました"
+      render action: :edit
+    end
   end
 
   def destroy
