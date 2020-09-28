@@ -16,7 +16,25 @@ class PlatesController < ApplicationController
       render :new
     end
   end
-  
+
+  def edit
+
+  end
+
+  def update
+  end
+
+  def destroy
+    plate = Plate.find(params[:id])
+    if plate.destroy
+      flash[:notice] = "削除が完了しました"
+      redirect_to action: :index
+    else
+      flash[:alert] = "削除が失敗しました"
+      render :index
+    end
+  end
+    
   private
 
   def plate_params

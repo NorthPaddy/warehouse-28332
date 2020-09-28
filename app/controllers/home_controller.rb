@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def top
     @users = User.all
-    @warehouse = Warehouse.all.includes(:plates)
+    @plate = Plate.all
+    @warehouse = Warehouse.all.order(id: 'DESC')
   end
 end

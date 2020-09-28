@@ -1,10 +1,14 @@
 <%= render "shared/header" %>
 
-<div class="plate-Registration-main">
-  <h3 class="plate-Registration-title">登録したい情報の入力して下さい</h3>
-  <h4 class="plate-Registration-sub-title">全ての項目の情報は必須です</h4>
+<div class="Registration-main">
+  <h3 class="Registration-title">登録したい倉庫の情報の入力して下さい</h3>
+  <h4 class="Registration-sub-title">全ての項目の情報は必須です</h4>
 
-  <h3 class="plate-text">プレートの情報を入力してください</h3>
+  <h3 class="plate-information">
+  <%= @plate.mold.name %>-<%= @plate.thickness.name %>-<%= @plate.hardness.name %> <%= @plate.plate_color.name %> 
+  <%= @plate.plate_width.name %>x<%= @plate.plate_length.name %> <%= @plate.number_of_sheets %>枚 
+  </h3>
+
   <%= form_with model:@warehouse, url:plate_warehouses_path, local: true do |f| %>
   <div class="weight-bold-text">倉庫ナンバー
     <span class="indispensable">必須</span>
