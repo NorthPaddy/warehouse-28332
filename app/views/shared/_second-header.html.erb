@@ -1,9 +1,6 @@
-<ul class='header-lists'>
-      <% if user_signed_in? %>
-      <li class="header-user-name"><%= current_user.name %></li>
-      <li class="header-sign-out"> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-      <li class="header-sign-in"><%= link_to 'ログイン', new_user_session_path, class: "signin-link" %></li>
-      <li class="header-sign-up"><%= link_to '登録', new_user_registration_path, class: "signup-link" %></li>
-      <% end %>
-    </ul>
+<header class="top-page-header">
+  <div class="service-title">
+    <%= link_to image_tag( "home-icon.png", class:"home-icon"),"/" %>
+    Warehouse
+  </div>
+</header>
