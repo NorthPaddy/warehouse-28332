@@ -27,17 +27,10 @@
   border-radius: 7px;
 }
 
-.user-login-btn {
-  width: 60%;
-  text-align: center;
-  font-weight: bold;
-  color: whitesmoke;
-  background-color: #17a2b8;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.user-sign-up-btn {
+.user-login-btn,
+.user-sign-up-btn,
+.plate-registration-btn,
+.warehouse-registration-btn {
   width: 60%;
   text-align: center;
   font-weight: bold;

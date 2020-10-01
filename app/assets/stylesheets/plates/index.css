@@ -1,0 +1,65 @@
+.plate-main {
+  text-align: center;
+  width: 100vw;
+  margin: 0;
+}
+.plate-registration {
+  padding: 20px;
+  border-bottom: 1px solid lavender;
+  margin: 0;
+}
+
+.plate-registration-title {
+  padding: 10px;
+}
+
+.new-plate-link {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: lightgreen ;
+  border-radius: 7px;
+  color: darkblue;
+  text-decoration: none;
+  padding: 15px;
+  align-items: center;
+}
+
+.plate-index {
+  padding-bottom: 10px;
+  border-bottom: 1px solid lavender;
+
+}
+
+.plate-index-title {
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: lightyellow;
+}
+
+.plate-contents {
+  margin: 10px 0;
+}
+
+.plate-content {
+  list-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 7px 0;
+}
+
+.plate-content-links {
+  font-size: 18px;
+}
+
+.link-btn {
+  border: 1px solid lightgray;
+  background-color: lightgray;
+  color: black;
+  font-size: 15px;
+  padding: 7px;
+  margin: 3px;
+  text-decoration: none;
+  border-radius: 7px;
+
+}

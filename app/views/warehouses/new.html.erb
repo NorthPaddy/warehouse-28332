@@ -1,39 +1,49 @@
-<%= render "shared/second-header" %>
+<%= render "shared/header" %>
 
-<div class="Registration-main">
-  <h3 class="Registration-title">登録したい倉庫の情報の入力して下さい</h3>
-  <h4 class="Registration-sub-title">全ての項目の情報は必須です</h4>
-
-  <h3 class="plate-information">
-  <%= @plate.mold.name %>-<%= @plate.thickness.name %>-<%= @plate.hardness.name %> <%= @plate.plate_color.name %> 
-  <%= @plate.plate_width.name %>x<%= @plate.plate_length.name %> <%= @plate.number_of_sheets %>枚 
-  </h3>
-
-  <%= form_with model:@warehouse, url:plate_warehouses_path, local: true do |f| %>
-  <div class="weight-bold-text">倉庫ナンバー
-    <span class="indispensable">必須</span>
+<%= form_with model:@warehouse, url:plate_warehouses_path, local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <div class="form-header-text">倉庫に登録</div>
+    <div class="form-header-sub-text">全ての項目の情報は必須です</div>
+    <div class="plate-information">
+    <%= @plate.mold.name %>-<%= @plate.thickness.name %>-<%= @plate.hardness.name %> <%= @plate.plate_color.name %> 
+    <%= @plate.plate_width.name %>x<%= @plate.plate_length.name %> <%= @plate.number_of_sheets %>枚 
+    </div>
   </div>
-  <%= f.text_field :warehouse_number, class:"warehouse_number_input", id:"warehouse_number", placeholder:"例）1" %>
-
-  <div class="weight-bold-text">列
-        <span class="indispensable">必須</span>
-      </div>
-    <%= f.text_field :warehouse_colum, class:"warehouse_colum_input", id:"warehouse_colum", placeholder:"例）1" %>
-
-  <div class="weight-bold-text">番地
-        <span class="indispensable">必須</span>
-      </div>
-    <%= f.text_field :house_number, class:"house_number_input", id:"house_number",placeholder:"例）1" %>
-
-  <div class="weight-bold-text">段数
-        <span class="indispensable">必須</span>
-      </div>
-    <%= f.text_field :number_of_stage, class:"number_of_stage_input", id:"number_of_stage", placeholder:"例）1" %>
-
-      <div class="Registration-btn-contents">
-        <%= f.submit "登録する" ,class:"Registration-btn" %>
-      </div>
-  <% end %>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">倉庫ナンバー</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :warehouse_number, class:"input-default", id:"warehouse_number", placeholder:"例）1" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">列</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :warehouse_colum, class:"input-default", id:"warehouse_colum", placeholder:"例）1" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">番地</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :house_number, class:"input-default", id:"house_number",placeholder:"例）1" %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">段数</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :number_of_stage, class:"input-default", id:"number_of_stage", placeholder:"例）1" %>
+  </div>
+  <div class="form-footer">
+    <div class="register-btn">
+      <%= f.submit "登録する" ,class:"warehouse-registration-btn" %>
+    </div>
+  </div>
 </div>
+<% end %>
 
 <%= render "shared/footer" %>

@@ -1,51 +1,67 @@
-<%= render "shared/second-header" %>
+<%= render "shared/header" %>
 
-<div class="plate-Registration-main">
-  <h3 class="plate-Registration-title">登録したい情報の入力して下さい</h3>
-  <h4 class="plate-Registration-sub-title">全ての項目の情報は必須です</h4>
-
-  <%= form_with model: @plate, url:plate_path, local: true do |f| %>
-  <div class="new-plates">
-    <div class="weight-bold-text">型
-    <span class="indispensable">必須</span>
+<%= form_with model: @plate, url:plate_path, local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <div class="form-header-text">プレート情報編集</div>
+    <div class="form-header-sub-text">全ての項目の情報は必須です</div>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">型</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:mold_id, Mold.all, :id, :name, {}, {class:"select-box", id:"plate-mold"}) %>
-
-    <div class="weight-bold-text">厚み
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:mold_id, Mold.all, :id, :name, {}, {class:"select-box", id:"plate-mold"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">厚み</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:thickness_id, Thickness.all, :id, :name, {}, {class:"select-box", id:"plate-thickness"}) %>
-
-    <div class="weight-bold-text">硬さ
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:thickness_id, Thickness.all, :id, :name, {}, {class:"select-box", id:"plate-thickness"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">硬さ</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:hardness_id, Hardness.all, :id, :name, {}, {class:"select-box", id:"plate-hardness"}) %>
-
-    <div class="weight-bold-text">色
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:hardness_id, Hardness.all, :id, :name, {}, {class:"select-box", id:"plate-hardness"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">色</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:plate_color_id, PlateColor.all, :id, :name, {}, {class:"select-box", id:"plate-color"}) %>
-
-    <div class="weight-bold-text">幅
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:plate_color_id, PlateColor.all, :id, :name, {}, {class:"select-box", id:"plate-color"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">幅</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:plate_width_id, PlateWidth.all, :id, :name, {}, {class:"select-box", id:"plate-width"}) %>
-
-    <div class="weight-bold-text">長さ
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:plate_width_id, PlateWidth.all, :id, :name, {}, {class:"select-box", id:"plate-width"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">長さ</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.collection_select(:plate_length_id, PlateLength.all, :id, :name, {}, {class:"select-box", id:"plate-length"}) %>
-    <div class="sell-btn-contents">
-
-    <div class="weight-bold-text">枚数(半角数字のみ)
-    <span class="indispensable">必須</span>
+    <%= f.collection_select(:plate_length_id, PlateLength.all, :id, :name, {}, {class:"select-box", id:"plate-length"}) %>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">枚数(半角数字のみ)</label>
+      <span class="indispensable">必須</span>
     </div>
-  <%= f.text_field :number_of_sheets, class:"number_of_sheets_input", id:"plate_number_of_sheets" %>
-
-    <div class="Registration-btn-contents">
-      <%= f.submit "登録する" ,class:"Registration-btn" %>
+    <%= f.text_field :number_of_sheets, class:"input-default", id:"plate_number_of_sheets" %>
+  </div>
+  <div class="form-footer">
+    <div class="register-btn">
+      <%= f.submit "登録する" ,class:"user-login-btn" %>
     </div>
-    <% end %>
+  </div>
 </div>
+<% end %>
+
 
 <%= render "shared/footer" %>
