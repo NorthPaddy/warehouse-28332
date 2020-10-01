@@ -1,6 +1,10 @@
-<%= render "shared/header" %>
+<%= render "shared/second-header" %>
 
   <%= form_with model:@user, url:user_registration_path, class: "user_registration", local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <div class="form-header-text">新規登録</div>
+  </div>
   <div class="form-group">
     <div class="form-text-wrap">
       <label class="form-text">氏名</label>
@@ -31,14 +35,15 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation" %>
         <p class='info-text'>※上記と同じパスワードを入力してください</p>
   </div>
-  <div class="form-group">
-    <h4 class='form-bottom-text'>
+  <div class="form-footer">
+    <h4 class='form-footer-text'>
       記入項目を確認後、新規登録ボタンを押してください
     </h4>
+    <div class='register-btn'>
+      <%= f.submit "新規登録" ,class:"user-sign-up-btn" %>
+    </div>
   </div>
-  <div class='register-btn'>
-    <%= f.submit "新規登録" ,class:"register-red-btn" %>
-  </div>
+</div>
 <% end %>
 
 <%= render "shared/footer" %>

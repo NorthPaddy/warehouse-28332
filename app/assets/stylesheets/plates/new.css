@@ -1,26 +1,11 @@
-.Registration-main {
+.form-header-sub-text {
+  font-size: 20px;
   text-align: center;
 }
 
-.weight-bold-text {
-  font-size: 15px;
-  font-weight: bold;
-  margin: 10px 10px 0px;
-}
-
 .select-box {
-  margin-bottom: 10px;
-  width: 10%;
-}
-.number_of_sheets_input {
-  margin-bottom: 20px;
+  font-size: 16px;
+  height: 33px;
+  margin: 0 100px;
 }
 
-.Registration-btn-contents {
-  align-items: center;
-}
-
-.Registration-btn {
-  font-weight: bold;
-margin-bottom: 20px;
-}

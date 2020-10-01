@@ -3,33 +3,51 @@
 }
 
 
-.header-contents {
+.top-page-header {
   width: 100vw;
   display: flex;
   flex-direction: column;
   background-color: whitesmoke;
   text-align: center;
-
-}
-
-.title-contents {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  color: black;
 }
 
 .service-title {
-  font-size: 5vh;
-  justify-content: flex-start;
+  font-size: 6vh;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 30px;
 }
 
 .home-icon {
   width: 5vw;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  padding: 1vh 0;
+}
+
+.lists {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-name {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+  justify-content: flex-start;
 
 }
 
-.service-sub-title {
-  font-size: 2vh;
 
-}
+
+
+
+

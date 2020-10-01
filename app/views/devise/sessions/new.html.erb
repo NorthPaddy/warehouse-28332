@@ -1,6 +1,10 @@
-<%= render "shared/header" %>
+<%= render "shared/second-header" %>
 
-  <%= form_with model: @user, url: user_session_path ,class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: user_session_path ,class: 'registration-main', local: true do |f| %>
+<div class="form-wrap">
+  <div class="form-header">
+    <div class="form-header-text">ログイン</div>
+  </div>
   <div class="form-group">
     <div class="form-text-wrap">
       <label class="form-text">氏名</label>
@@ -21,7 +25,7 @@
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password, class:"input-default", id:"password" %>
-    <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
+    <div class='info-text'>※英字と数字の両方を含めて設定してください</div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -29,16 +33,17 @@
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation" %>
-        <p class='info-text'>※上記と同じパスワードを入力してください</p>
+    <div class='info-text'>※上記と同じパスワードを入力してください</div>
   </div>
-  <div class="form-group">
-    <h4 class='form-bottom-text'>
+  <div class="form-footer">
+    <h4 class='form-footer-text'>
       記入項目を確認後、ログインボタンを押してください
     </h4>
+    <div class='register-btn'>
+      <%= f.submit "ログイン" ,class:"plate-registration-btn" %>
+    </div>
   </div>
-  <div class='register-btn'>
-    <%= f.submit "ログイン" ,class:"register-red-btn" %>
-  </div>
+</div>
 <% end %>
 
 <%= render "shared/footer" %>

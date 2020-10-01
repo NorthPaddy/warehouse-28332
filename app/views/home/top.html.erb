@@ -1,21 +1,8 @@
 <%= render "shared/header" %>
-<%= render "shared/second-header" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 <div class="main-menu">
 
-  <div class="user-contents">
-  <% if user_signed_in? %>
-      <h2 class="service-explain">ログアウトは
-      <%= link_to "こちら", destroy_user_session_path, method: :delete, class: "logout" %>
-      </h2>
-  <% else %>
-    <h2 class="service-explain">登録されていない方は
-      <a><%= link_to "こちら", new_user_registration_path, class: "signup-link" %></a>
-    </h2>
-    <h2 class="service-explain">ログインは
-      <a><%= link_to "こちら", new_user_session_path, class: "signin-link" %></a>
-    </h2>
-  <% end %>
-  </div>
 
   <%#以下はログイン状態じゃないと表示されない%>
   <% if user_signed_in? %>
@@ -38,29 +25,31 @@
   </div>
   <% end %>
 </div>
-
-<table border="10">
-<tr>
-  <th>登録者</th>
-  <th>型</th><th>厚み</th><th>硬さ</th><th>色</th><th>高さ</th><th>長さ</th><th>枚数</th>
-  <th>倉庫名</th><th>列</th><th>番地</th><th>段数</th>
-</tr>
-<% @warehouse.each do |warehouse| %>
-<tr>  
-  <td><%= warehouse.user.name %></td>
-  <td><%= warehouse.plate.mold.name %></td>
-  <td><%= warehouse.plate.thickness.name %></td>
-  <td><%= warehouse.plate.hardness.name %></td>
-  <td><%= warehouse.plate.plate_color.name %></td>
-  <td><%= warehouse.plate.plate_width.name %></td>
-  <td><%= warehouse.plate.plate_length.name %></td>
-  <td><%= warehouse.plate.number_of_sheets %></td>
-  <td>第<%= warehouse.warehouse_number %>倉庫</td>
-  <td><%= warehouse.warehouse_colum %>列</td>
-  <td><%= warehouse.house_number %>番地</td>
-  <td><%= warehouse.number_of_stage %>段目</td>
-</tr>
-<% end %>
-</table>
+<div class="table-contents">
+  <div class="table-title">プレート一覧</div>
+  <table>
+  <tr>
+    <th>型</th><th>厚み</th><th>硬さ</th><th>色</th><th>高さ</th><th>長さ</th><th>枚数</th>
+    <th>倉庫名</th><th>列</th><th>番地</th><th>段数</th>
+    <th>登録者</th>
+  </tr>
+  <% @warehouse.each do |warehouse| %>
+  <tr>  
+    <td><%= warehouse.plate.mold.name %></td>
+    <td><%= warehouse.plate.thickness.name %></td>
+    <td><%= warehouse.plate.hardness.name %></td>
+    <td><%= warehouse.plate.plate_color.name %></td>
+    <td><%= warehouse.plate.plate_width.name %></td>
+    <td><%= warehouse.plate.plate_length.name %></td>
+    <td><%= warehouse.plate.number_of_sheets %></td>
+    <td>第<%= warehouse.warehouse_number %>倉庫</td>
+    <td><%= warehouse.warehouse_colum %>列</td>
+    <td><%= warehouse.house_number %>番地</td>
+    <td><%= warehouse.number_of_stage %>段目</td>
+    <td><%= warehouse.user.name %></td>
+  </tr>
+  <% end %>
+  </table>
+</div>
 
 <%= render "shared/footer" %>

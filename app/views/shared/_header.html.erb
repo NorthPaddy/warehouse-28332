@@ -1,13 +1,17 @@
-<div class="header-contents">
-
-  <div class="title-contents">  
-    <h1 class="service-title">
+<header class="top-page-header">
+  <div class="service-title">
     <%= link_to image_tag( "home-icon.png", class:"home-icon"),"/" %>
-      Warehouse
-    </h1>
-    <h3 class="service-sub-title">
-      倉庫内の商品の登録、検索が行えます
-    </h3>
-    
+    Warehouse
   </div>
-</div>
+  <div class='nav'>
+    <ul class='lists'>
+      <% if user_signed_in? %>
+      <li class="user-name">社員番号：<%= current_user.employee_number %>  氏名：<%= current_user.name %></li>
+      <li> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
