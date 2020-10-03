@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        employee_number: 社員番号
+      plate:
+        mold_id: 型
+        thickness_id: 厚み
+        hardness_id: 硬さ
+        plate_color_id: 色
+        plate_width_id: 幅
+        plate_length_id: 長さ
+        number_of_sheets: 枚数
+      warehouse:
+        warehouse_number: 倉庫名
+        warehouse_colum: 列
+        house_number: 番地
+        number_of_stage: 段数
