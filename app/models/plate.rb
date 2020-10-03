@@ -12,7 +12,7 @@ class Plate < ApplicationRecord
 
   with_options presence: true do
     validates :mold_id, :thickness_id, :hardness_id,
-              :plate_color,:plate_width,:plate_length
+              :plate_color, :plate_width, :plate_length
     validates :number_of_sheets, format: { with: /\A[0-9]+\z/ }
   end
 
