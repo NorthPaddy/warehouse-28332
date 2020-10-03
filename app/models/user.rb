@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :employee_number
+    validates :employee_number, uniqueness: true
     PASSWORD_REGEX = /\A[a-z\d]{6,}+\z/i.freeze
     validates :password,format: { with: PASSWORD_REGEX }
   end
