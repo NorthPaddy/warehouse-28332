@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 
 <%= form_with model:@warehouse, url:plate_warehouses_path, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
 <div class="form-wrap">
   <div class="form-header">
     <div class="form-header-text">倉庫に登録</div>
@@ -17,6 +18,7 @@
     </div>
     <%= f.text_field :warehouse_number, class:"input-default", id:"warehouse_number", placeholder:"例）1" %>
   </div>
+
   <div class="form-group">
     <div class="form-text-wrap">
       <label class="form-text">列</label>

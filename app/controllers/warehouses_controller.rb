@@ -24,6 +24,6 @@ class WarehousesController < ApplicationController
   end
 
   def warehouse_params
-    params.require(:warehouse).permit(:warehouse_number, :warehouse_colum, :house_number, :number_of_stage).merge(user_id: current_user.id, plate_id: @plate.id )
+    params.require(:warehouse).permit(:warehouse_number, :warehouse_colum, :house_number, :number_of_stage).merge(user_id: current_user.id, plate_id: @plate.id)
   end
 end
