@@ -1,50 +1,24 @@
-* {
-  box-sizing: border-box;
+
+.d-inline-block {
+  width: 25px;
+  height: 25px;
+  margin: 10px 5px 10px 10px;
 }
 
-
-.top-page-header {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  background-color: whitesmoke;
-  text-align: center;
-}
-
-.service-title {
-  font-size: 6vh;
-  justify-content: space-between;
-  align-items: center;
+.nav-employee {
+  color: white;
   font-weight: bold;
-  padding: 30px;
+  padding: .5rem ;
+
 }
 
-.home-icon {
-  width: 5vw;
-}
-
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: flex-end;
-  width: 90%;
-  padding: 1vh 0;
-}
-
-.lists {
-  display: flex;
-  list-style: none;
-  align-items: flex-end;
-}
-
-.user-name {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+.nav-user {
+  color: white;
   font-weight: bold;
   justify-content: flex-start;
-
+  padding: .5rem 1rem;
 }
+
 
 
 

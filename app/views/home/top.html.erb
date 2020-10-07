@@ -1,55 +1,54 @@
-<%= render "shared/header" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<div class="main-menu">
-
-
+<div class="container-fluid">
+  <div class="img-fluid">
+    <h1 class="title">Warehouse</h1>
+  </div>
   <%#以下はログイン状態じゃないと表示されない%>
   <% if user_signed_in? %>
-  <div class="item-contents">
-    <h2 class='service-explain'>商品の登録・倉庫への登録は
-      <a><%= link_to "こちら", plates_path, class: "item-link" %></a>
-    </h2>
-  </div>
-
-  <div class="warehouse-contents">
-    <h2 class="service-explain">倉庫内検索は
-      <a><%= link_to "こちら", "#", class: "warehouse-link" %></a>
-    </h2>
-  </div>
-
-  <div class="warehouse-contents">
-    <h2 class="service-explain">検索履歴は
-      <a><%= link_to "こちら", "#", class: "warehouse-link" %></a>
-    </h2>
+  <div class="contents">
+    <h2 class="contents-title">メインメニュー</h2>
+    <div class="content">
+      <h3 class='service-explain'>
+        <%= link_to "商品の登録・倉庫への登録", plates_path, class:"btn btn-primary btn-lg" %>
+      </h3>
+    </div>
+    <div class="content">
+      <h3 class="service-explain">
+        <%= link_to "倉庫内検索", "#", class:"btn btn-primary btn-lg" %>
+      </h3>
+    </div>
+    <div class="content">
+      <h3 class="service-explain">
+        <%= link_to "検索履歴", "#", class:"btn btn-primary btn-lg" %>
+      </h3>
+    </div>
   </div>
   <% end %>
-</div>
-<div class="table-contents">
-  <div class="table-title">プレート一覧</div>
-  <table>
-  <tr>
-    <th>型</th><th>厚み</th><th>硬さ</th><th>色</th><th>幅</th><th>長さ</th><th>枚数</th>
-    <th>倉庫名</th><th>列</th><th>番地</th><th>段数</th>
-    <th>登録者</th>
-  </tr>
-  <% @warehouse.each do |warehouse| %>
-  <tr>  
-    <td><%= warehouse.plate.mold.name %></td>
-    <td><%= warehouse.plate.thickness.name %></td>
-    <td><%= warehouse.plate.hardness.name %></td>
-    <td><%= warehouse.plate.plate_color.name %></td>
-    <td><%= warehouse.plate.plate_width.name %></td>
-    <td><%= warehouse.plate.plate_length.name %></td>
-    <td><%= warehouse.plate.number_of_sheets %></td>
-    <td>第<%= warehouse.warehouse_number %>倉庫</td>
-    <td><%= warehouse.warehouse_colum %>列</td>
-    <td><%= warehouse.house_number %>番地</td>
-    <td><%= warehouse.number_of_stage %>段目</td>
-    <td><%= warehouse.user.name %></td>
-  </tr>
-  <% end %>
-  </table>
+  <div class="table-contents">
+    <h2 class="table-title">プレート一覧</h2>
+    <table class="table-striped">
+    <tr>
+      <th>型</th><th>厚み</th><th>硬さ</th><th>色</th><th>幅</th><th>長さ</th><th>枚数</th>
+      <th>倉庫名</th><th>列</th><th>番地</th><th>段数</th>
+      <th>登録者</th>
+    </tr>
+    <% @warehouse.each do |warehouse| %>
+    <tr>  
+      <td><%= warehouse.plate.mold.name %></td>
+      <td><%= warehouse.plate.thickness.name %></td>
+      <td><%= warehouse.plate.hardness.name %></td>
+      <td><%= warehouse.plate.plate_color.name %></td>
+      <td><%= warehouse.plate.plate_width.name %></td>
+      <td><%= warehouse.plate.plate_length.name %></td>
+      <td><%= warehouse.plate.number_of_sheets %></td>
+      <td>第<%= warehouse.warehouse_number %>倉庫</td>
+      <td><%= warehouse.warehouse_colum %>列</td>
+      <td><%= warehouse.house_number %>番地</td>
+      <td><%= warehouse.number_of_stage %>段目</td>
+      <td><%= warehouse.user.name %></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>
 </div>
 
 <%= render "shared/footer" %>
