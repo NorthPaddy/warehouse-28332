@@ -7,56 +7,63 @@
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">型</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">型
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:mold_id, Mold.all, :id, :name, {}, {class:"select-box", id:"plate-mold"}) %>
+    <%= f.collection_select(:mold_id, Mold.all, :id, :name, {}, {class:"form-control", id:"plate-mold"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">厚み</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">厚み
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:thickness_id, Thickness.all, :id, :name, {}, {class:"select-box", id:"plate-thickness"}) %>
+    <%= f.collection_select(:thickness_id, Thickness.all, :id, :name, {}, {class:"form-control", id:"plate-thickness"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">硬さ</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">硬さ
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:hardness_id, Hardness.all, :id, :name, {}, {class:"select-box", id:"plate-hardness"}) %>
+    <%= f.collection_select(:hardness_id, Hardness.all, :id, :name, {}, {class:"form-control", id:"plate-hardness"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">色</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">色
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:plate_color_id, PlateColor.all, :id, :name, {}, {class:"select-box", id:"plate-color"}) %>
+    <%= f.collection_select(:plate_color_id, PlateColor.all, :id, :name, {}, {class:"form-control", id:"plate-color"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">幅</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">幅
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:plate_width_id, PlateWidth.all, :id, :name, {}, {class:"select-box", id:"plate-width"}) %>
+    <%= f.collection_select(:plate_width_id, PlateWidth.all, :id, :name, {}, {class:"form-control", id:"plate-width"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">長さ</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">長さ
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.collection_select(:plate_length_id, PlateLength.all, :id, :name, {}, {class:"select-box", id:"plate-length"}) %>
+    <%= f.collection_select(:plate_length_id, PlateLength.all, :id, :name, {}, {class:"form-control", id:"plate-length"}) %>
   </div>
   <div class="form-group">
     <div class="form-text-wrap">
-      <label class="form-text">枚数(半角数字のみ)</label>
-      <span class="indispensable">必須</span>
+      <label class="form-text">枚数(半角数字のみ)
+        <span class="badge badge-danger">必須</span>
+      </label>
     </div>
-    <%= f.text_field :number_of_sheets, class:"input-default", id:"plate_number_of_sheets" %>
+    <%= f.text_field :number_of_sheets, class:"form-control", id:"plate_number_of_sheets" %>
   </div>
   <div class="form-footer">
     <div class="register-btn">
-      <%= f.submit "登録する" ,class:"user-login-btn" %>
+      <%= f.submit "登録する" ,class:"btn btn-primary btn-lg" %>
     </div>
   </div>
 </div>

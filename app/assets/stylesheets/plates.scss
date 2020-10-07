@@ -1,3 +1,49 @@
-// Place all the styles related to the plates controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.plate-registration {
+  border-bottom: 1px solid lavender;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.plate-registration-title {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.plate-index {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.plate-index-title {
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: lightyellow;
+}
+
+.plate-contents {
+  margin: 10px auto;
+}
+
+.plate-content {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 7px;
+}
+
+.link-btn {
+  background-color: lightgray;
+  color: black;
+  font-size: 15px;
+  padding: 7px;
+  margin: 3px;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+/* 以下フォーム内のCSS */
+.form-header-sub-text {
+  font-size: 20px;
+  text-align: center;
+}
