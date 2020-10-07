@@ -1,7 +1,8 @@
-<div class="plate-main">
+<div class="container-fluid">
   <div class="plate-registration">
-    <div class="plate-registration-title">新規登録はこちら</div>
-    <%= link_to "プレート新規登録", new_plate_path, class: "new-plate-link" %>
+    <div class="plate-registration-title">プレートへの登録はこちら
+    </div>
+      <%= link_to "新規登録", new_plate_path, class:"btn btn-primary btn-lg" %>
   </div>
   <div class="plate-index">
     <div class="plate-index-title">プレート登録一覧</div>
@@ -11,16 +12,15 @@
         <%= plate.mold.name %>-<%= plate.thickness.name %>-<%= plate.hardness.name %> <%= plate.plate_color.name %> <%= plate.plate_width.name %>x<%= plate.plate_length.name %> <%= plate.number_of_sheets %>枚 
       </div>
       <div class="plate-content-links">
-      <% if plate.warehouses.blank? %>
-        <%= link_to "倉庫へ登録", new_plate_warehouse_path(plate.id), class: "link-btn" %>
-      <% end %>
-        <%= link_to "編集", edit_plate_path(plate.id), method: :get, class: "link-btn" %>
-        <%= link_to "削除", plate_path(plate.id), method: :delete, class: "link-btn" %>
+        <% if plate.warehouses.blank? %>
+          <%= link_to "倉庫へ登録", new_plate_warehouse_path(plate.id), class: "link-btn" %>
+        <% end %>
+          <%= link_to "編集", edit_plate_path(plate.id), method: :get, class: "link-btn" %>
+          <%= link_to "削除", plate_path(plate.id), method: :delete, class: "link-btn" %>
       </div>
     </div>
     <% end %>
   </div>
 </div>
 
-<%= link_to "topページへ戻る", "/", class: "top-link_btn" %>
 <%= render "shared/footer" %>
