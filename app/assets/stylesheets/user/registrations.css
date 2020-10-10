@@ -1,7 +1,6 @@
 .form-wrap {
   width: 100vw;
-  padding: 50px;
-  background-color: whitesmoke;
+  padding: 50px 0;
 }
 
 .form-header {
@@ -14,7 +13,7 @@
 }
 
 .form-header-text {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
 }
@@ -38,6 +37,10 @@
   margin-left: 5px;
 }
 
+.form-control {
+  text-align: center;
+}
+
 .form-footer {
   background-color: white;
   border-top: 1px solid lavender;
@@ -45,4 +48,9 @@
   padding: 20px;
   margin: 0 auto;
   width: 60vw;
+}
+
+.form-footer-text {
+  font-size: 15px;
+  text-align: center;
 }

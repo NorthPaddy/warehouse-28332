@@ -7,9 +7,10 @@
   <div class="plate-index">
     <div class="plate-index-title">プレート登録一覧</div>
     <% @plate.each do |plate| %>
+    <% if current_user.name == plate.user.name %>
     <div class="plate-contents">
       <div class="plate-content">
-        <%= plate.mold.name %>-<%= plate.thickness.name %>-<%= plate.hardness.name %> <%= plate.plate_color.name %> <%= plate.plate_width.name %>x<%= plate.plate_length.name %> <%= plate.number_of_sheets %>枚 
+        <%= plate.mold.name %>-<%= plate.thickness.name %>-<%= plate.hardness.name %> <%= plate.plate_color.name %> <%= plate.plate_width.name %>x<%= plate.plate_length.name %> <%= plate.number_of_sheets %>枚
       </div>
       <div class="plate-content-links">
         <% if plate.warehouses.blank? %>
@@ -19,6 +20,7 @@
           <%= link_to "削除", plate_path(plate.id), method: :delete, class: "link-btn" %>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@ class PlatesController < ApplicationController
   def create
     @plate = Plate.new(plate_params)
     if @plate.save
-      redirect_to plates_path
+      redirect_to plates_path, notice: 'プレート情報が登録されました'
     else
       render :new
     end

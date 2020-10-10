@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Warehouse28332</title>
+    <title>Warehouse</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,6 +19,13 @@
 
   <body>
     <%= render "shared/header" %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-primary lert-dismissible fade show"<%= message_type %>"><%= message %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
     <%= yield %>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
