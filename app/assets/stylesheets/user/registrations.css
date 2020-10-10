@@ -1,21 +1,18 @@
 .form-wrap {
   width: 100vw;
   padding: 50px 0;
+  text-align: center;
 }
 
 .form-header {
-  background-color: white;
-  border-bottom: 1px solid lavender;
-  padding: 10px 0 0 ;
   flex-direction: column;
   margin: 0 auto;
   width: 60vw;
 }
 
 .form-header-text {
-  font-size: 25px;
+  font-size: 50px;
   font-weight: bold;
-  text-align: center;
 }
 
 .form-group {
@@ -24,8 +21,6 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
-  background-color: white;
 }
 
 .form-text {
@@ -42,15 +37,12 @@
 }
 
 .form-footer {
-  background-color: white;
-  border-top: 1px solid lavender;
-  text-align: center;
+  border-top: 1px solid black;
   padding: 20px;
   margin: 0 auto;
-  width: 60vw;
+  width: 55vw;
 }
 
 .form-footer-text {
   font-size: 15px;
-  text-align: center;
 }

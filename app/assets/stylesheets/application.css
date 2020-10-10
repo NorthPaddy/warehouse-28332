@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ * {
+  box-sizing: border-box;
+}
+
 body {
   background-image:linear-gradient(-45deg, #dfdfdf 25%, #f9f8f7 25%, #f9f8f7 50%,
     #dfdfdf  50%, #dfdfdf 75%, #f9f8f7 75%, #f9f8f7);
