@@ -1,11 +1,24 @@
-.footer-contents {
-  width: 100vw;
-  display: flex;
+.footer {
   flex-direction: column;
   background-color: rgb(182, 181, 181);
   text-align: center;
-
 }
+
+.footer-service-title {
+  color: black;
+  font-weight: bold;
+  font-size: 19px;
+}
+.footer-service-title:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.row {
+  margin-right: 15px; 
+  margin-left: 15px;
+}
+
 .footer-home-icon {
   height: 20px;
   width: 20px;

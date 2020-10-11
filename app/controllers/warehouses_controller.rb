@@ -11,8 +11,10 @@ class WarehousesController < ApplicationController
   def create
     @warehouse = Warehouse.new(warehouse_params)
     if @warehouse.save
+      flash[:notice] = '登録が完了しました'
       redirect_to plates_path(@plate)
     else
+      flash[:alert] = '登録に失敗しました'
       render :new
     end
   end
