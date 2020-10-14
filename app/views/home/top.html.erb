@@ -1,6 +1,15 @@
 <div class="container-fluid">
   <div class="img-fluid">
     <h1 class="title">Warehouse</h1>
+    <div class="d-flex justify-content-around">
+    <% if user_signed_in? %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-warning btn-lg" %>
+    <% else %>
+      <%= link_to '新規登録', new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to 'ログイン', new_user_session_path, class: "btn btn-info btn-lg" %></li>
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "btn btn-success btn-lg" %></li>
+    <% end %>
+    </div>
   </div>
   <%#以下はログイン状態じゃないと表示されない%>
   <% if user_signed_in? %>
@@ -13,12 +22,12 @@
     </div>
     <div class="content">
       <h3 class="service-explain">
-        <%= link_to "倉庫内検索", "#", class:"btn-shadow btn btn-primary btn-lg" %>
+        <% link_to "倉庫内検索", "#", class:"btn-shadow btn btn-primary btn-lg" %>
       </h3>
     </div>
     <div class="content">
       <h3 class="service-explain">
-        <%= link_to "検索履歴", "#", class:"btn-shadow btn btn-primary btn-lg" %>
+        <% link_to "検索履歴", "#", class:"btn-shadow btn btn-primary btn-lg" %>
       </h3>
     </div>
   </div>

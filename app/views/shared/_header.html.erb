@@ -26,13 +26,10 @@
       </li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "nav-link" %></li>
+      <li><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "nav-link" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "nav-link" %></li>
       <% end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="検索" aria-label="Search">
-      <button class="btn btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-    </form>
   </div>
 </nav>
 </header>
