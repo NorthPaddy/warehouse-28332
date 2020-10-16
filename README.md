@@ -1,6 +1,7 @@
 ## アプリケーション名
 # 「warehouse」
-![image](https://user-images.githubusercontent.com/66520239/93739357-0c619c80-fc23-11ea-85d8-5fe868eefb9c.png)
+https://warehouse-28332.herokuapp.com/
+![image](https://gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950)
 
 ## 概要
 私の前職での課題をテーマにしたアプリケーションになります
@@ -12,22 +13,27 @@
 ![image](https://user-images.githubusercontent.com/66520239/93739244-d0c6d280-fc22-11ea-9398-0956b01e2fe1.png)
 
 ## 機能一覧
-・ログイン（device)
-・商品登録、編集、削除
-・倉庫への商品の登録
+  ・ユーザー機能（device)
+    新規登録、ログイン、ログアウト機能
+    ゲストログイン機能（閲覧される方はご利用くだざい）
 
+  ・商品登録機能
+    倉庫に登録したい商品の情報を登録、編集、削除
 
-## URL
-https://warehouse-28332.herokuapp.com/
+  ・倉庫への商品の登録機能
+    商品を倉庫のどこの保存するか倉庫の住所情報を登録
+    編集、削除
 
-AWSのEC2にもデプロイする予定です
+## 使用技術
+  ・フロントエンド
+    HTML, CSS, Bootstrap
 
+  ・バックエンド
+    ruby 2.6.5
+    rails 6.0.0
 
-
-## テスト用アカウント
-閲覧者様ログイン用アカウント
-ゲストログインをご利用ください
-
+  ・DB
+    mysql2
 
 ## 利用方法
 まずはユーザー登録（社員番号、氏名）を入力し、ログインをします。
@@ -44,53 +50,5 @@ AWSのEC2にもデプロイする予定です
 検索者は把握していません。
 検索者は登録者が登録した情報を商品の情報を元に探し出し商品の場所を特定することができるようにキーワードを用いて検索することができます
 
-## テーブル設計
-
-### usersテーブル
-
-| Column           | Type   | Options    |
-| ---------        | ------ | ---------- |
-| name             | string | null:false |
-| employee_number  | string | null:false |
-| password         | string | null:false |
-
-#### Association
-
-- has_many :plates
-- has_many :warehouses
-
-
-### platesテーブル
-
-| Column            | Type       | Options                       |
-| --------------    | ---------- | ----------------------------- |
-| mold_id           | integer    | null:false                    |
-| thickness_id      | integer    | null:false                    |
-| hardness_id       | integer    | null:false                    |
-| plate_color_id    | integer    | null:false                    |
-| plate_width_id    | integer    | null:false                    |
-| plate_length_id   | integer    | null:false                    |
-| Number_of_sheets  | integer    | null:false                    |
-| user              | references | null:false, foreign_key: true |
-
-#### Association
-
-- belongs_to :user
-- has_many :warehouse
-
-
-### warehouseテーブル
-
-| Column            | Type       | Options                       |
-| --------------    | ---------- | ----------------------------- |
-| warehouse_number  | string     | null:false                    |
-| warehouse_colum   | string     | null:false                    |
-| house_number      | integer    | null:false                    |
-| number_of_stage   | integer    | null:false                    |
-| user              | references | null:false, foreign_key: true |
-| plate             | references | null:false, foreign_key: true |
-
-#### Association
-
-- belongs_to :user
-- belongs_to :plate
+## ER図
+![image](https://gyazo.com/2ba7079d258db1312303a6dc276ebd3e)
