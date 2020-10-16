@@ -1,7 +1,7 @@
 ## アプリケーション名
 # 「warehouse」
 https://warehouse-28332.herokuapp.com/
-![image](https://gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950)
+[![Image from Gyazo](https://i.gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950.jpg)](https://gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950)
 
 ## 概要
 私の前職での課題をテーマにしたアプリケーションになります
@@ -13,27 +13,27 @@ https://warehouse-28332.herokuapp.com/
 ![image](https://user-images.githubusercontent.com/66520239/93739244-d0c6d280-fc22-11ea-9398-0956b01e2fe1.png)
 
 ## 機能一覧
-  ・ユーザー機能（device)
-    新規登録、ログイン、ログアウト機能
-    ゲストログイン機能（閲覧される方はご利用くだざい）
+  - ユーザー機能（device)
+    - 新規登録、ログイン、ログアウト機能
+    - ゲストログイン機能（閲覧される方はご利用くだざい）
 
-  ・商品登録機能
-    倉庫に登録したい商品の情報を登録、編集、削除
+  - 商品登録機能
+    - 倉庫に登録したい商品の情報を登録、編集、削除
 
-  ・倉庫への商品の登録機能
-    商品を倉庫のどこの保存するか倉庫の住所情報を登録
-    編集、削除
+  - 倉庫への商品の登録機能
+    - 商品を倉庫のどこの保存するか倉庫の住所情報を登録
+    - 編集、削除
 
 ## 使用技術
-  ・フロントエンド
-    HTML, CSS, Bootstrap
+  - フロントエンド
+    - HTML, CSS, Bootstrap
 
-  ・バックエンド
-    ruby 2.6.5
-    rails 6.0.0
+  - バックエンド
+    - ruby 2.6.5
+    - rails 6.0.0
 
-  ・DB
-    mysql2
+  - DB
+    - mysql2
 
 ## 利用方法
 まずはユーザー登録（社員番号、氏名）を入力し、ログインをします。
@@ -51,4 +51,4 @@ https://warehouse-28332.herokuapp.com/
 検索者は登録者が登録した情報を商品の情報を元に探し出し商品の場所を特定することができるようにキーワードを用いて検索することができます
 
 ## ER図
-![image](https://gyazo.com/2ba7079d258db1312303a6dc276ebd3e)
+[![Image from Gyazo](https://i.gyazo.com/2ba7079d258db1312303a6dc276ebd3e.png)](https://gyazo.com/2ba7079d258db1312303a6dc276ebd3e)
