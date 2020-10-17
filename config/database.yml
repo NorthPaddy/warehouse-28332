@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: warehouse_28332_production
-  username: warehouse_28332
-  password: <%= ENV['WAREHOUSE_28332_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
