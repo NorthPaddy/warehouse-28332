@@ -1,6 +1,6 @@
 ## アプリケーション名
 # 「warehouse」
-https://warehouse-28332.herokuapp.com/
+http://13.115.131.104/
 [![Image from Gyazo](https://i.gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950.jpg)](https://gyazo.com/eaa9c3b004414cd3b73d2e4c10ddc950)
 
 ## 概要
